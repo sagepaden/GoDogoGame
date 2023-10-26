@@ -13,9 +13,6 @@ dist-ssr
 *.local
 
 # Editor directories and files
-TestExcaliburGame
-zelda-multiplayer-demo-code-download
-test-react-game
 .vscode/*
 !.vscode/extensions.json
 .idea
