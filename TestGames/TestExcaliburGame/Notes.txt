@@ -1,18 +1,22 @@
-map size: 160(20x8) x 208 (26x8)
-    Tile Size: 20 x  26
+map size: 160(16x10) x 208 (16x13)
+    Tile Size: 16 x  16
 
     Top Wall coordinates:
         x: 48
+        y: 0 - 208
 
     Bottom Wall coordinates:
         x: 145
+        y: 0 - 208
 
 
 
     Left Wall coordinates:
+        x: 0 - 160
         y: 0
 
     Right Wall coordinates:
+        x: 0 - 160
         y: 208
 
 

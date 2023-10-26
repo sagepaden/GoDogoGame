@@ -1,12 +1,12 @@
 import * as ex from 'excalibur';
 
-export const VIEWPORT_WIDTH = 160 + 48;
-export const VIEWPORT_HEIGHT = 144 + 48;
+export const VIEWPORT_WIDTH = 300;
+export const VIEWPORT_HEIGHT = 300;
 
-export const SCALE = 8;
+export const SCALE = 1;
 export const SCALE_2x = new ex.Vector(2, 2);
 
-export const ANCHOR_CENTER = new ex.Vector(0.5, 0.5);
+export const ANCHOR_CENTER = new ex.Vector(1, 1);
 export const ANCHOR_TOP_LEFT = new ex.Vector(0, 0);
 
 export const LEFT = 'LEFT';
