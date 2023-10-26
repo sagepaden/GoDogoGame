@@ -26,7 +26,7 @@ export class Player extends ex.Actor {
 			height: 32,
 			scale: SCALE_2x,
 			collider: ex.Shape.Box(11, 10, ANCHOR_CENTER, new ex.Vector(0, 4)),
-			collisionType: ex.CollisionType.Active,
+			collisionType: ex.CollisionType.PreventCollision,
 		});
 
 		this.facing = DOWN;

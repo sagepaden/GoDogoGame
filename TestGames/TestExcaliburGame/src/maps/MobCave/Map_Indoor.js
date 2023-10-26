@@ -17,33 +17,33 @@ export class Map_Indoor extends ex.Actor {
     });
     this.graphics.use(mapSprite);
 
-    this.tileWidth = 19;
-    this.tileHeight = 22;
+    this.tileWidth = 26;
+    this.tileHeight = 20;
   }
 
   onInitialize(engine) {
-    [
-      // Top wall, top right area
-      { x: 2, y: 2, w: 13, h: 1 },
-      { x: 14, y: 3, w: 3, h: 1 },
-      { x: 16, y: 4, w: 2, h: 1 },
+    // [
+    //   // Top wall, top right area
+    //   { x: 2, y: 2, w: 13, h: 1 },
+    //   { x: 14, y: 3, w: 3, h: 1 },
+    //   { x: 16, y: 4, w: 2, h: 1 },
 
-      // Right wall
-      { x: 17, y: 5, w: 1, h: 8 },
-      { x: 15, y: 12, w: 2, h: 8 },
+    //   // Right wall
+    //   { x: 17, y: 5, w: 1, h: 8 },
+    //   { x: 15, y: 12, w: 2, h: 8 },
 
-      { x: 2, y: 3, w: 1, h: 9 },
-      { x: 3, y: 11, w: 2, h: 9 },
+    //   { x: 2, y: 3, w: 1, h: 9 },
+    //   { x: 3, y: 11, w: 2, h: 9 },
 
-      // Bottom
-      { x: 4, y: 20, w: 12, h: 1 },
+    //   // Bottom
+    //   { x: 4, y: 20, w: 12, h: 1 },
 
-      // Inner
-      { x: 7, y: 12, w: 5, h: 5 },
-    ].forEach(({ x, y, w, h }) => {
-      const floor = new Floor(x, y, w, h);
-      engine.add(floor);
-    });
+    //   // Inner
+    //   { x: 7, y: 12, w: 5, h: 5 },
+    // ].forEach(({ x, y, w, h }) => {
+    //   const floor = new Floor(x, y, w, h);
+    //   engine.add(floor);
+    // });
 
     // Moblin points for this map
 //     [

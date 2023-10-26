@@ -4,10 +4,10 @@ import { DOWN, LEFT, RIGHT, UP, WALK } from '../constants.js';
 
 const WALK_ANIM_SPEED = 150;
 const charSpritesheetGridConfig = {
-	columns: 10,
-	rows: 10,
-	spriteWidth: 32,
-	spriteHeight: 32,
+	columns: 4,
+	rows: 4,
+	spriteWidth: 64,
+	spriteHeight: 64,
 };
 
 const linkSpriteSheet = ex.SpriteSheet.fromImageSource({
@@ -21,16 +21,16 @@ const SPRITESHEET_MAP = {
 
 const ANIMATION_CONFIGS = {
 	[DOWN]: {
-		WALK: [[0, 1], WALK_ANIM_SPEED],
+		WALK: [[12, 13, 14, 15], WALK_ANIM_SPEED],
 	},
 	[UP]: {
-		WALK: [[10, 11], WALK_ANIM_SPEED],
+		WALK: [[0, 1, 2, 3], WALK_ANIM_SPEED],
 	},
 	[LEFT]: {
-		WALK: [[20, 21], WALK_ANIM_SPEED],
+		WALK: [[4, 5, 6, 7], WALK_ANIM_SPEED],
 	},
 	[RIGHT]: {
-		WALK: [[30, 31], WALK_ANIM_SPEED],
+		WALK: [[8, 9, 10, 11], WALK_ANIM_SPEED],
 	},
 };
 

@@ -1,0 +1,35 @@
+map size: 160(20x8) x 208 (26x8)
+    Tile Size: 20 x  26
+
+    Top Wall coordinates:
+        x: 48
+
+    Bottom Wall coordinates:
+        x: 145
+
+
+
+    Left Wall coordinates:
+        y: 0
+
+    Right Wall coordinates:
+        y: 208
+
+
+Dog Sprite:
+
+    Full Canvas Size: 256x256
+
+    Size of Index: 64x64
+
+
+
+    Index:
+
+        Up-Walk: 0, 1, 2, 3
+
+        Down-Walk: 12, 13, 14, 15
+
+        Left-Walk: 4, 5, 6, 7
+
+        Right-Walk: 8, 9, 10, 11
