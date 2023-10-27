@@ -6,7 +6,9 @@ export const VIEWPORT_HEIGHT = 300;
 export const SCALE = 1;
 export const SCALE_2x = new ex.Vector(2, 2);
 
-export const ANCHOR_CENTER = new ex.Vector(1, 1);
+
+// These are what make the walls accurate
+export const ANCHOR_CENTER = new ex.Vector(0, 0);
 export const ANCHOR_TOP_LEFT = new ex.Vector(0, 0);
 
 export const LEFT = 'LEFT';

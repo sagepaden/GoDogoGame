@@ -17,6 +17,6 @@ export class Floor extends ex.Actor {
       color: ex.Color.Green,
     });
 
-    this.graphics.opacity = 1.0;
+    this.graphics.opacity = 0.0;
   }
 }
