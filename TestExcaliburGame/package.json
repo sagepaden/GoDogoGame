@@ -13,6 +13,7 @@
 		"vite": "^4.3.9"
 	},
 	"dependencies": {
+		"@excaliburjs/plugin-tiled": "^0.28.0",
 		"excalibur": "^0.28.1",
 		"peerjs": "^1.4.7",
 		"prettier": "^2.8.8"

@@ -18,16 +18,16 @@ export class Player_CameraStrategy {
     }
 
     // Limits
-    const R_LIMIT = this.map.tileWidth * SCALE * 16 - 7 * SCALE * 16;
+    const R_LIMIT = this.map.tileWidth * SCALE * 5 * SCALE * 5;
     this.position.x = this.position.x > R_LIMIT ? R_LIMIT : this.position.x;
     
-    const L_LIMIT = 8 * SCALE * 16;
+    const L_LIMIT = 8 * SCALE * 5;
     this.position.x = this.position.x < L_LIMIT ? L_LIMIT : this.position.x;
     
-    const D_LIMIT = this.map.tileHeight * SCALE * 16 - 5 * SCALE * 16;
+    const D_LIMIT = this.map.tileHeight * SCALE * 5 * SCALE * 16;
     this.position.y = this.position.y > D_LIMIT ? D_LIMIT : this.position.y;
     
-    const U_LIMIT = 7 * SCALE * 16;
+    const U_LIMIT = 5 * SCALE * 16;
     this.position.y = this.position.y < U_LIMIT ? U_LIMIT : this.position.y;
 
     return this.position;

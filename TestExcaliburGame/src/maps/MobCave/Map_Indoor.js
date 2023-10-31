@@ -24,17 +24,21 @@ export class Map_Indoor extends ex.Actor {
   onInitialize(engine) {
     [
       // Top Wall
-      { x: 0, y: 4, w: 13, h: 1 },
+      { x: -1, y: 7, w: 6, h: 1 },
+
+      { x: 10, y: 5, w: 6, h: 1 },
+
+      { x: 22, y: 7, w: 5, h: 1 },
 
       // Bottom Wall
-      { x: 0, y: 18, w: 5, h: 1 },
-      { x: 16, y: 18, w: 5, h: 1 },
+      { x: 0, y: 19, w: 16, h: 1 },
+      // { x: 16, y: 18, w: 5, h: 1 },
 
       // Left Wall
-      { x: -1, y: 0, w: 1, h: 10 },
+      { x: -1, y: 8, w: 1, h: 6 },
 
       // Right Wall
-      { x: 26, y: 0, w: 1, h: 10 },
+      { x: 32, y: 8, w: 1, h: 6 },
 
 
     ].forEach(({ x, y, w, h }) => {
