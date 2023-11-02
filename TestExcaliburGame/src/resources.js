@@ -1,5 +1,6 @@
 import * as ex from 'excalibur';
 import { TiledMapResource } from '@excaliburjs/plugin-tiled';
+import '@excaliburjs/plugin-tiled'
 
 const Images = {
 	// Characters
@@ -7,7 +8,7 @@ const Images = {
 };
 
 const tiledMap = new TiledMapResource(
-	'../public/TiledMaps/GoDogoTestMap/GoDogoTestMap.tmx',
+	'/TiledMaps/GoDogoTestMap/GoDogoTestMap.tmx',
 );
 
 const loader = new ex.Loader([tiledMap]);
