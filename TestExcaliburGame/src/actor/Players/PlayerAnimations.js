@@ -19,12 +19,6 @@ export class PlayerAnimations {
 	showRelevantAnim() {
 		const { actor } = this;
 
-		// Always prioritize showing PAIN if we are in pain.
-		// if (actor.hasGhostPainState || actor.painState) {
-		//   actor.graphics.use(actor.skinAnims[actor.facing][PAIN]);
-		//   return;
-		// }
-
 		// If a dedicated action is happening, use that.
 
 		if (actor.skinAnims && actor.skinAnims[actor.facing]) {
@@ -32,14 +26,6 @@ export class PlayerAnimations {
 		} else {
 			console.error(`Invalid skinAnims or facing value for actor.`);
 		}
-
-		// if (actor.actionAnimation) {
-		//   actor.graphics.use(actor.actionAnimation.frame);
-		//   return;
-		// }
-
-		// // Use correct directional frame
-		// actor.graphics.use(actor.skinAnims[actor.facing][WALK]);
 
 		// Use animating version if we are moving
 		const walkingMsLeft = actor.walkingMsLeft ?? 0;

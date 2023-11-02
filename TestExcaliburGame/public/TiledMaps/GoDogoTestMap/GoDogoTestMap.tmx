@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="16" height="10" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="11">
+ <tileset firstgid="1" source="/TileSets/global.tsx"/>
+ <tileset firstgid="58051" source="/TileSets/Gym_2_layer_2.tsx"/>
+ <tileset firstgid="58135" source="/TileSets/Gym_layer_2.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="16" height="10">
+  <data encoding="csv">
+0,0,0,0,0,9204,9204,9204,9204,9204,9204,0,0,0,0,0,
+9203,9203,9203,9203,9203,9204,9204,9204,9204,9204,9204,9203,9203,9203,9203,9203,
+9203,9203,9203,9203,9203,9204,9204,9204,9204,9204,9204,9203,9203,9203,9203,9203,
+9203,9203,9203,9203,9203,9474,9474,9474,9474,9474,9474,9203,9203,9203,9203,9203,
+9473,9473,9473,9473,9473,19193,19193,19193,19193,19193,19193,9473,9473,9473,9473,9473,
+19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,
+19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,
+19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,
+19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,19193,
+9473,19193,9473,9473,9473,9473,9473,9473,9473,9473,9473,9473,9473,9473,9473,9473
+</data>
+ </layer>
+
+ <objectgroup id="7" name="Bounds">
+  <object id="4" type="BoxCollider" x="0.359299" y="61.7994" width="79.405" height="17.6056">
+   <properties>
+    <property name="CollisionType" propertytype="BoxCollider" value="Fixed"/>
+   </properties>
+  </object>
+  <object id="5" type="BoxCollider" x="80.1236" y="42.0379" width="96.6513" height="20.1207">
+   <properties>
+    <property name="CollisionType" propertytype="BoxCollider" value="Fixed"/>
+   </properties>
+  </object>
+  <object id="6" type="BoxCollider" x="175.982" y="57.809" width="80.1661" height="21.3989">
+   <properties>
+    <property name="CollisionType" propertytype="BoxCollider" value="Fixed"/>
+   </properties>
+  </object>
+  <object id="7" type="BoxCollider" x="0.319387" y="47.2692" width="15.319387" height="112.424">
+   <properties>
+    <property name="CollisionType" propertytype="BoxCollider" value="Fixed"/>
+   </properties>
+  </object>
+  <object id="8" type="BoxCollider" x="0.319387" y="159.055" width="15.4561" height="15.319387">
+   <properties>
+    <property name="CollisionType" propertytype="BoxCollider" value="Fixed"/>
+   </properties>
+  </object>
+  <object id="9" type="BoxCollider" x="35.7713" y="158.735" width="220.696">
+   <properties>
+    <property name="CollisionType" propertytype="BoxCollider" value="Fixed"/>
+   </properties>
+  </object>
+  <object id="10" type="BoxCollider" x="255.829" y="53.3376" width="15.319387" height="104.439">
+   <properties>
+    <property name="CollisionType" propertytype="BoxCollider" value="Fixed"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer id="3" name="Tile Layer 3" width="16" height="10">
+  <data encoding="csv">
+0,0,0,0,0,7562,7562,7562,7562,7562,7562,0,0,0,0,0,
+7562,7562,7562,7562,7562,0,0,0,0,0,0,7562,7562,7562,7562,7562,
+0,10924,10925,10926,0,0,0,36734,36735,0,0,0,10924,10925,10926,0,
+0,11194,0,11196,0,25741,0,37004,37005,0,25741,0,11194,0,11196,0,
+0,0,0,0,0,26011,0,0,0,0,26011,0,0,0,0,0,
+9996,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9997,
+9996,0,0,0,0,22151,22152,22152,22152,22152,22153,0,0,0,0,9997,
+9996,0,0,0,0,22421,22422,22422,22422,22422,22423,0,0,0,0,9997,
+9996,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9997,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="6" name="Tile Layer 4" width="16" height="10" offsetx="0" offsety="-5.08441">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,27643,27644,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,27913,27914,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+  <layer id="2" name="Tile Layer 2" width="16" height="10">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,58052,58139,58053,0,0,0,0,0,0,0,0,58052,58139,58053,0,
+0,58064,58158,58065,0,0,0,0,0,0,0,0,58064,58158,58065,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,18252,17982,9997,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+27004,27005,27006,0,0,0,0,0,0,0,0,0,0,0,0,0,
+27274,27275,27276,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+</map>
