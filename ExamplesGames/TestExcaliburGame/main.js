@@ -1,5 +1,5 @@
 import * as ex from 'excalibur';
-import { loader, tiledMap } from './src/resources.js';
+import { loader } from './src/resources.js';
 import { Player } from './src/actor/Players/Player.js';
 import { Player_CameraStrategy } from './src/classes/PlayerCameraStrategy.js';
 import {
@@ -8,8 +8,7 @@ import {
 	VIEWPORT_HEIGHT,
 	VIEWPORT_WIDTH,
 } from './src/constants.js';
-
-import {setDrawing} from '@excaliburjs/plugin-tiled'
+import { Map_Indoor } from './src/maps/MobCave/Map_Indoor.js';
 
 const SCALE = 2;
 
@@ -20,17 +19,34 @@ const game = new ex.Engine({
 	antialiasing: false, // Pixel art graphics
 });
 
-const player = new Player();
+//const map = new Map_MobCave();
+//const map = new Map_Outdoor();
+const map = new Map_Indoor();
+game.add(map);
+const [startingX, startingY] = map.getPlayerStartingPosition();
 
-player.z = 1; // Make sure the player is rendered above the map
+// Add HUD
+// const hud = new BottomBar();
+// game.add(hud);
+
+// const playerSkin = randomFromArray([
+//   "LINK",
+//   "BLUELINK",
+//   "YELLOWLINK",
+//   "REDLINK",
+//   "TARIN",
+//   "MARIN",
+// ]);
+
+// original player varible with randomized skin
+// const player = new Player(startingX, startingY, playerSkin);
+
+const player = new Player(startingX, startingY);
 game.add(player);
 
-game.currentScene.camera.pos = new ex.Vector(100, 100);
-
 game.on('initialize', () => {
-	
 	// Add custom Camera behavior, following player and being limited to the map bounds
-	const cameraStrategy = new Player_CameraStrategy(player);
+	const cameraStrategy = new Player_CameraStrategy(player, map);
 	game.currentScene.camera.addStrategy(cameraStrategy);
 
 	// Set up ability to query for certain actors on the fly
@@ -42,16 +58,5 @@ game.on('initialize', () => {
 	});
 });
 
-game.start(loader)
-	.then(function () {
-		tiledMap.addTiledMapToScene(game.currentScene);
-		// Initialize camera strategy with the loaded map
-		const cameraStrategy = new Player_CameraStrategy(
-			player,
-			tiledMap.data.rawMap,
-		);
-		game.currentScene.camera.addStrategy(cameraStrategy);
-	})
-	.catch(function (error) {
-		console.error('Error starting game:', error);
-	});
+game.start(loader);
+

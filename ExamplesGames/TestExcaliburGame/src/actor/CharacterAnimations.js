@@ -15,6 +15,18 @@ const linkSpriteSheet = ex.SpriteSheet.fromImageSource({
   grid: charSpritesheetGridConfig,
 });
 
+// const furnitureSpriteSheetGridConfig = {
+//   columns: 4,
+//   rows: 4,
+//   spriteWidth: 64,
+//   spriteHeight: 64,
+// };
+
+// const furnitureSpriteSheet = ex.FurnitureSheet.fromImageSource({
+//   image: Images.indoorImage,
+//   grid: furnitureSpriteSheetGridConfig,
+// });
+
 const SPRITESHEET_MAP = {
   LINK: linkSpriteSheet,
 };
@@ -33,6 +45,23 @@ const ANIMATION_CONFIGS = {
     WALK: [[8, 9, 10, 11], WALK_ANIM_SPEED],
   },
 };
+
+// export const generateCharacterAnimations = (spriteSheetKey) => {
+//   const sheet = SPRITESHEET_MAP[spriteSheetKey];
+//   let payload = {};
+//   [UP, DOWN, LEFT, RIGHT].forEach((dir) => {
+//     payload[dir] = {};
+//     [WALK].forEach((pose) => {
+//       const [frames, speed] = ANIMATION_CONFIGS[dir][pose];
+//       payload[dir][pose] = ex.Animation.fromSpriteSheet(
+//         sheet,
+//         [...frames],
+//         speed
+//       );
+//     });
+//   });
+//   return payload;
+// };
 
 export const generateCharacterAnimations = (spriteSheetKey) => {
   spriteSheetKey = linkSpriteSheet;
