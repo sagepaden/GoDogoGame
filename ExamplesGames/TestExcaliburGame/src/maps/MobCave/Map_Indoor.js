@@ -24,11 +24,11 @@ export class Map_Indoor extends ex.Actor {
   onInitialize(engine) {
     [
       // Top Wall
-      { x: -1, y: 7, w: 6, h: 1 },
+      { x: -1, y: 9, w: 6, h: 1 },
 
-      { x: 10, y: 5, w: 6, h: 1 },
+      { x: 10, y: 7, w: 6, h: 1 },
 
-      { x: 22, y: 7, w: 5, h: 1 },
+      { x: 23, y: 9, w: 5, h: 1 },
 
       // Bottom Wall
       { x: 0, y: 19, w: 16, h: 1 },
@@ -39,8 +39,6 @@ export class Map_Indoor extends ex.Actor {
 
       // Right Wall
       { x: 32, y: 8, w: 1, h: 6 },
-
-
     ].forEach(({ x, y, w, h }) => {
       const floor = new Floor(x, y, w, h);
       engine.add(floor);
@@ -59,7 +57,7 @@ export class Map_Indoor extends ex.Actor {
   }
 
   getPlayerStartingPosition() {
-    return [128, 128];
+    return [200, 200];
 
     // return randomFromArray([
     // 	[200, 225],
