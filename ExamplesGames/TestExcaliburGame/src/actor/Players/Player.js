@@ -114,7 +114,7 @@ export class Player extends ex.Actor {
     // Do actions and movement
     if (!this.actionAnimation) {
       this.onPreUpdateMovement(engine, delta);
-      // this.onPreUpdateActionKeys(engine);
+      //this.onPreUpdateActionKeys(engine);
     }
 
     // Update current animation according to state
