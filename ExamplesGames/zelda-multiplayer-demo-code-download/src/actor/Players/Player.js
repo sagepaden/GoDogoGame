@@ -40,7 +40,6 @@ export class Player extends ex.Actor {
     this.skinAnims = generateCharacterAnimations(skinId);
     this.actionAnimation = null;
 
-
     this.on("collisionstart", (evt) => this.onCollisionStart(evt));
   }
 
@@ -55,7 +54,6 @@ export class Player extends ex.Actor {
     this.playerActions = new PlayerActions(this);
     this.playerAnimations = new PlayerAnimations(this);
     this.networkUpdater = new NetworkUpdater(engine, EVENT_SEND_PLAYER_UPDATE);
-
 
     // When a new player joins, I will send them my current state string
     engine.on(EVENT_INITIAL_DATA_REQUESTED, () => {
@@ -184,7 +182,7 @@ export class Player extends ex.Actor {
 
     // Listen for Number keys to change skin
     [
-      { key: ex.Input.Keys.Digit1, skinId: "LINK" },
+      { key: ex.Input.Keys.C, skinId: "LINK" },
       { key: ex.Input.Keys.Digit2, skinId: "BLUELINK" },
       { key: ex.Input.Keys.Digit3, skinId: "YELLOWLINK" },
       { key: ex.Input.Keys.Digit4, skinId: "REDLINK" },
@@ -202,5 +200,4 @@ export class Player extends ex.Actor {
       this.takeDamage();
     }
   }
-
 }

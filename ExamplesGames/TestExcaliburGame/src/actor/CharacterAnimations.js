@@ -1,6 +1,6 @@
 import * as ex from "excalibur";
 import { Images } from "../resources.js";
-import { DOWN, LEFT, RIGHT, UP, WALK } from "../constants.js";
+import { DOWN, LEFT, RIGHT, UP, WALK, SIT, LAYDOWN, C } from "../constants.js";
 
 const WALK_ANIM_SPEED = 100;
 const charSpritesheetGridConfig = {
@@ -15,6 +15,16 @@ const linkSpriteSheet = ex.SpriteSheet.fromImageSource({
   grid: charSpritesheetGridConfig,
 });
 
+const SIT_ANIM_SPEED = 50;
+const sitSheetImage = ex.SpriteSheet.fromImageSource({
+  image: Images.sitSheetImage,
+  grid: {
+    rows: 1,
+    columns: 4,
+    spriteWidth: 64,
+    spriteHeight: 64,
+  },
+});
 // const furnitureSpriteSheetGridConfig = {
 //   columns: 4,
 //   rows: 4,
@@ -29,11 +39,13 @@ const linkSpriteSheet = ex.SpriteSheet.fromImageSource({
 
 const SPRITESHEET_MAP = {
   LINK: linkSpriteSheet,
+  SIT: sitSheetImage,
 };
 
 const ANIMATION_CONFIGS = {
   [DOWN]: {
     WALK: [[12, 13, 14, 15], WALK_ANIM_SPEED],
+    SIT: [[]]
   },
   [UP]: {
     WALK: [[0, 1, 2, 3], WALK_ANIM_SPEED],
@@ -43,6 +55,9 @@ const ANIMATION_CONFIGS = {
   },
   [RIGHT]: {
     WALK: [[8, 9, 10, 11], WALK_ANIM_SPEED],
+  },
+  [C]: {
+    SIT: [[0, 1, 2, 3], SIT_ANIM_SPEED],
   },
 };
 
