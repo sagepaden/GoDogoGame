@@ -45,20 +45,23 @@ const SPRITESHEET_MAP = {
 const ANIMATION_CONFIGS = {
   [DOWN]: {
     WALK: [[12, 13, 14, 15], WALK_ANIM_SPEED],
-    SIT: [[]]
+    SIT: [[3]],
   },
   [UP]: {
     WALK: [[0, 1, 2, 3], WALK_ANIM_SPEED],
+    SIT: [[0]],
   },
   [LEFT]: {
     WALK: [[4, 5, 6, 7], WALK_ANIM_SPEED],
+    SIT: [[1]],
   },
   [RIGHT]: {
     WALK: [[8, 9, 10, 11], WALK_ANIM_SPEED],
+    SIT: [[2]],
   },
-  [C]: {
-    SIT: [[0, 1, 2, 3], SIT_ANIM_SPEED],
-  },
+  // [C]: {
+  //   SIT: [[0, 1, 2, 3], SIT_ANIM_SPEED],
+  // },
 };
 
 // export const generateCharacterAnimations = (spriteSheetKey) => {
@@ -88,7 +91,7 @@ export const generateCharacterAnimations = (spriteSheetKey) => {
   let payload = {};
   [UP, DOWN, LEFT, RIGHT].forEach((dir) => {
     payload[dir] = {};
-    [WALK].forEach((pose) => {
+    [WALK, SIT].forEach((pose) => {
       const [frames, speed] = ANIMATION_CONFIGS[dir][pose];
       payload[dir][pose] = ex.Animation.fromSpriteSheet(
         sheet,
