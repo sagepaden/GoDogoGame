@@ -2,7 +2,7 @@ import * as ex from 'excalibur';
 
 const Images = {
 	// Characters
-	linkSheetImage: new ex.ImageSource('../public/sprites/Root_walk.png'),
+	linkSheetImage: new ex.ImageSource('../public/sprites/Root_Walk-sheet.png'),
 	// linkBlueSheetImage: new ex.ImageSource("/sprites/link-blue-sheet.png"),
 	// linkRedSheetImage: new ex.ImageSource("/sprites/link-red-sheet.png"),
 	// linkYellowSheetImage: new ex.ImageSource("/sprites/link-yellow-sheet.png"),

@@ -1,4 +1,5 @@
-import * as ex from "excalibur";
+// import * as ex from "excalibur";
+import {fromSpriteSheet} from 'excalibur'
 import { Images } from "../resources.js";
 import {
   DOWN,

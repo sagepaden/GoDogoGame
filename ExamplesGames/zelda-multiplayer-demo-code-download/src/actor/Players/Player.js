@@ -155,6 +155,10 @@ export class Player extends ex.Actor {
     if (keyboard.isHeld(ex.Input.Keys.Down)) {
       this.vel.y = 1;
     }
+    if (keyboard.isHeld(ex.Input.Keys.Z)) {
+      this.vel.y = 0;
+      this.vel.x = 0;
+    }
 
     // Normalize walking speed
     if (this.vel.x !== 0 || this.vel.y !== 0) {

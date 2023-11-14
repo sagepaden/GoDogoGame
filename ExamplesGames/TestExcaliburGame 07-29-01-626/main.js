@@ -41,7 +41,8 @@ const [startingX, startingY] = map.getPlayerStartingPosition();
 // original player varible with randomized skin
 // const player = new Player(startingX, startingY, playerSkin);
 
-const player = new Player(startingX, startingY);
+const player = new Player(startingX, startingY, 'LINK');
+// player.onInitialize(engine); // Pass the engine instance here
 game.add(player);
 
 game.on('initialize', () => {
@@ -59,4 +60,3 @@ game.on('initialize', () => {
 });
 
 game.start(loader);
-

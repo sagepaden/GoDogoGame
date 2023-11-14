@@ -15,6 +15,8 @@ export const LEFT = 'LEFT';
 export const RIGHT = 'RIGHT';
 export const UP = 'UP';
 export const DOWN = 'DOWN';
+export const SIT = 'SIT';
+export const LAY = 'LAY';
 
 export const WALK = 'WALK';
 
