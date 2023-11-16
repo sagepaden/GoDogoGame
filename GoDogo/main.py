@@ -10,35 +10,43 @@ class Game:
         self.screen = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
         self.clock = pygame.time.Clock()
         self.running = True
-        self.font = pygame.font.Font('GoDogo/Marlboro.ttf', 32)
+        self.font = pygame.font.Font("Marlboro.ttf", 32)
 
-        self.dog_spritesheet = Spritesheet('GoDogo/img/DogSprite.png')
-        self.background = pygame.image.load('GoDogo/img/background.png')
-        self.intro_background = pygame.image.load('GoDogo/img/introbackground.png')
-        # self.go_background = pygame.image.load('GoDogo/img/gameover.png')
+        self.dog_spritesheet = Spritesheet("img/DogSprite.png")
+        self.background = pygame.image.load("img/background.png")
+        self.intro_background = pygame.image.load("img/introbackground.png")
+        self.invisible = pygame.image.load("img/invisible.png")
+        # self.go_background = pygame.image.load('img/gameover.png')
+
+    def createMapTilemap(self):
+        for i, row in enumerate(maptilemap):
+            for j, column in enumerate(row):
+                DummyBlock(self, j, i)
+                if column == "B":
+                    Block(self, j, i)
+                if column == "P":
+                    Player(self, j, i)
 
     # def createTilemap(self):
     #     for i, row in enumerate(tilemap):
     #         for j, column in enumerate(row):
-    #             Ground(self, j, i)
+    #             # Ground(self, j, i)
     #             if column == "B":
     #                 Block(self, j, i)
     #             if column == "P":
     #                 Player(self, j, i)
 
-    def createTilemap(self):
-    # Assuming "G" represents the ground area
-        ground_image = self.background  # Use the entire background image for ground
-        Ground(self, 0, 0, ground_image)
+    # def createTilemap(self):
+    #     # Assuming "G" represents the ground area
+    #     ground_image = self.background  # Use the entire background image for ground
+    #     Ground(self, 0, 0, ground_image)
 
-        for i, row in enumerate(tilemap):
-            for j, column in enumerate(row):
-                if column == "B":
-                    Block(self, j, i)
-                elif column == "P":
-                    Player(self, j, i)
-
-
+    #     for i, row in enumerate(maptilemap):
+    #         for j, column in enumerate(row):
+    #             if column == "B":
+    #                 Block(self, j, i)
+    #             elif column == "P":
+    #                 Player(self, j, i)
 
     def new(self):
         # a new game starts
@@ -47,7 +55,8 @@ class Game:
         self.all_sprites = pygame.sprite.LayeredUpdates()
         self.blocks = pygame.sprite.LayeredUpdates()
 
-        self.createTilemap()
+        self.createMapTilemap()
+        # self.createTilemap()
 
     def events(self):
         # game loop events
@@ -60,10 +69,9 @@ class Game:
         # game loop updates
         self.all_sprites.update()
 
-    def draw_background(self):
-        size = pygame.transform.scale(self.background, (600,500))
-        self.screen.blit(size, (0,0)) 
-       
+    # def draw_background(self):
+    #     size = pygame.transform.scale(self.background, (600, 500))
+    #     self.screen.blit(size, (0, 0))
 
     def draw(self):
         self.screen.fill(DOGOBLUE)
@@ -75,11 +83,10 @@ class Game:
     def main(self):
         # game loop - every game has a loop
         while self.playing:
-            self.draw_background()
+            # self.draw_background()
             self.events()
             self.update()
             self.draw()
-            
 
     # def game_over(self):
     #     text = self.font.render('Game Over', True, WHITE)
@@ -109,12 +116,12 @@ class Game:
     #         pygame.display.update()
 
     def intro_screen(self):
-        intro = True 
+        intro = True
 
-        title = self.font.render('Your Dog Loves you, So Love Your Dog.', True, BLACK)
+        title = self.font.render("Your Dog Loves you, So Love Your Dog.", True, BLACK)
         title_rect = title.get_rect(x=140, y=240)
 
-        play_button = Button(280, 140, 100, 50, WHITE, BLACK, 'Play', 32)
+        play_button = Button(280, 140, 100, 50, WHITE, BLACK, "Play", 32)
 
         while intro:
             for event in pygame.event.get():
@@ -128,7 +135,7 @@ class Game:
             if play_button.is_pressed(mouse_pos, mouse_pressed):
                 intro = False
 
-            self.screen.blit(self.intro_background, (0,0))
+            self.screen.blit(self.intro_background, (0, 0))
             self.screen.blit(title, title_rect)
             self.screen.blit(play_button.image, play_button.rect)
             self.clock.tick(FPS)

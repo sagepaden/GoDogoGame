@@ -1,8 +1,15 @@
 WIN_WIDTH = 640
 WIN_HEIGHT = 480
-TILESIZE = 64
-FPS = 60
+
+MAP_W_TILESIZE = 256
+MAP_H_TILESIZE = 128
+
 SPRITETILE = 64
+TILESIZE = 16
+
+
+FPS = 60
+
 
 PLAYER_LAYER = 4
 ENEMY_LAYER = 3
@@ -18,23 +25,18 @@ BLUE = (0, 0, 255)
 WHITE = (255, 255, 255)
 DOGOBLUE = (35, 64, 88)
 
-tilemap = [
-    'BBBBBBBBBBBBBBBBBBBB',
-    'B..................B',
-    'B..................B',
-    'B..................B',
-    'B..................B',
-    'B........P.........B',
-    'B..................B',
-    'B..................B',
-    'B..................B',
-    'B..................B',
-    'B..................B',
-    'B..................B',
-    'B..................B',
-    'B..................B',
-    'BBBBBBBBBBBBBBBBBBBB',
+maptilemap = ["M"]
 
+
+tilemap = [
+    "BBBBBBBBBBBBBBBB",
+    "B..............B",
+    "B..............B",
+    "B.......M......B",
+    "B......P.......B",
+    "B..............B",
+    "B..............B",
+    "BBBBBBBBBBBBBBBB",
 ]
 
 # tilemap = [
