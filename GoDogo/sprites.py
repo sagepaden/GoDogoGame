@@ -11,7 +11,7 @@ class Spritesheet:
     def get_sprite(self, x, y, width, height):
         sprite = pygame.Surface([width, height])
         sprite.blit(self.sheet, (0, 0), (x, y, width, height))
-        sprite.set_colorkey(DOGOBLUE)
+        sprite.set_colorkey(0)
         return sprite
 
 
