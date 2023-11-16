@@ -14,12 +14,11 @@ export const LEFT = "LEFT";
 export const RIGHT = "RIGHT";
 export const UP = "UP";
 export const DOWN = "DOWN";
-export const C = "C";
 
 export const WALK = "WALK";
 
 export const SIT = "SIT";
-export const LAYDOWN = "LAYDOWN";
+export const LAY = "LAY";
 
 export const EVENT_SEND_PLAYER_UPDATE = "EVENT_SEND_PLAYER_UPDATE";
 // export const EVENT_SEND_MOBLIN_UPDATE = "EVENT_SEND_MOBLIN_UPDATE";

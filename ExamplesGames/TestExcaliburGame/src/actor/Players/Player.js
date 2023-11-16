@@ -12,7 +12,7 @@ import {
 } from "../../constants.js";
 import { DirectionQueue } from "../../classes/DirectionQueue.js";
 import { generateCharacterAnimations } from "../CharacterAnimations.js";
-import { PlayerAnimations } from "./PlayerAnimations.js";
+//import { PlayerAnimations } from "./PlayerAnimations.js";
 
 // These are action keys for the sword and arrows
 // const ACTION_1_KEY = ex.Input.Keys.Z;
@@ -50,7 +50,7 @@ export class Player extends ex.Actor {
     // Register Sword, Arrow actions
 
     // this.playerActions = new PlayerActions(this);
-    this.playerAnimations = new PlayerAnimations(this);
+    //this.playerAnimations = new PlayerAnimations(this);
     // this.networkUpdater = new NetworkUpdater(
     // 	engine,
     // 	EVENT_SEND_PLAYER_UPDATE,
@@ -109,7 +109,7 @@ export class Player extends ex.Actor {
     this.directionQueue.update(engine);
 
     // Work on dedicated animation if we are doing one
-    this.playerAnimations.progressThroughActionAnimation(delta);
+    // this.playerAnimations.progressThroughActionAnimation(delta);
 
     // Do actions and movement
     if (!this.actionAnimation) {
@@ -118,7 +118,7 @@ export class Player extends ex.Actor {
     }
 
     // Update current animation according to state
-    this.playerAnimations.showRelevantAnim();
+    //this.playerAnimations.showRelevantAnim();
 
     // Update everybody else
     //     const networkUpdateStr = this.createNetworkUpdateString();
@@ -156,7 +156,11 @@ export class Player extends ex.Actor {
     if (keyboard.isHeld(ex.Input.Keys.Down)) {
       this.vel.y = 1;
     }
-    if (keyboard.isHeld(ex.Input.Keys.C)) {
+    if (keyboard.isHeld(ex.Input.Keys.Z)) {
+      this.vel.y = 0;
+      this.vel.x = 0;
+    }
+    if (keyboard.isHeld(ex.Input.Keys.X)) {
       this.vel.y = 0;
       this.vel.x = 0;
     }
@@ -186,24 +190,19 @@ export class Player extends ex.Actor {
   //         this.playerActions.actionShootArrow();
   //         return;
   //     }
-
-  // Listen for Number keys to change skin
-  // [
-  //   { key: ex.Input.Keys.Digit1, skinId: "LINK" },
-  //   { key: ex.Input.Keys.Digit2, skinId: "BLUELINK" },
-  //   { key: ex.Input.Keys.Digit3, skinId: "YELLOWLINK" },
-  //   { key: ex.Input.Keys.Digit4, skinId: "REDLINK" },
-  //   { key: ex.Input.Keys.Digit5, skinId: "MARIN" },
-  //   { key: ex.Input.Keys.Digit6, skinId: "TARIN" },
-  // ].forEach(({ key, skinId }) => {
-  //   if (engine.input.keyboard.wasPressed(key)) {
-  //     this.skinId = skinId;
-  //     this.skinAnims = generateCharacterAnimations(skinId);
-  //   }
-  // });
-
-  // JUST FOR Testing, fake pain on SPACE key
-  // if (engine.input.keyboard.wasPressed(ex.Input.Keys.Space)) {
-  //   this.takeDamage();
-  // }
 }
+// // Listen for Number keys to change skin
+// [
+//   { key: ex.Input.Keys.X, skinId: "LAYDOWN" },
+//   { key: ex.Input.Keys.Y, skinId: "SIT" },
+// ].forEach(({ key, skinId }) => {
+//   if (engine.input.keyboard.wasPressed(key)) {
+//     this.skinId = skinId;
+//     this.skinAnims = generateCharacterAnimations(skinId);
+//   }
+// });
+
+// JUST FOR Testing, fake pain on SPACE key
+// if (engine.input.keyboard.wasPressed(ex.Input.Keys.Space)) {
+//   this.takeDamage();
+// }

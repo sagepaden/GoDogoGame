@@ -1,5 +1,5 @@
 import * as ex from "excalibur";
-import { C, DOWN, LEFT, RIGHT, UP } from "../constants.js";
+import { LAY, SIT, DOWN, LEFT, RIGHT, UP } from "../constants.js";
 
 export class DirectionQueue {
   constructor() {
@@ -28,7 +28,8 @@ export class DirectionQueue {
       { key: ex.Input.Keys.Right, dir: RIGHT },
       { key: ex.Input.Keys.Up, dir: UP },
       { key: ex.Input.Keys.Down, dir: DOWN },
-      { key: ex.Input.Keys.C, dir: C },
+      { key: ex.Input.Keys.Z, dir: SIT },
+      { key: ex.Input.Keys.X, dir: LAY },
     ].forEach((group) => {
       if (engine.input.keyboard.wasPressed(group.key)) {
         this.add(group.dir);
