@@ -17,26 +17,26 @@ class Game:
         self.intro_background = pygame.image.load('GoDogo/img/introbackground.png')
         # self.go_background = pygame.image.load('GoDogo/img/gameover.png')
 
-    # def createTilemap(self):
-    #     for i, row in enumerate(tilemap):
-    #         for j, column in enumerate(row):
-    #             Ground(self, j, i)
-    #             if column == "B":
-    #                 Block(self, j, i)
-    #             if column == "P":
-    #                 Player(self, j, i)
-
     def createTilemap(self):
-    # Assuming "G" represents the ground area
-        ground_image = self.background  # Use the entire background image for ground
-        Ground(self, 0, 0, ground_image)
-
         for i, row in enumerate(tilemap):
             for j, column in enumerate(row):
+                Ground(self, j, i)
                 if column == "B":
                     Block(self, j, i)
-                elif column == "P":
+                if column == "P":
                     Player(self, j, i)
+
+    # def createTilemap(self):
+    # # Assuming "G" represents the ground area
+    #     ground_image = self.background  # Use the entire background image for ground
+    #     Ground(self, 0, 0, ground_image)
+
+    #     for i, row in enumerate(tilemap):
+    #         for j, column in enumerate(row):
+    #             if column == "B":
+    #                 Block(self, j, i)
+    #             elif column == "P":
+    #                 Player(self, j, i)
 
 
 
@@ -60,12 +60,12 @@ class Game:
         # game loop updates
         self.all_sprites.update()
 
-    def draw_background(self):
-        size = pygame.transform.scale(self.background, (600,500))
-        self.screen.blit(size, (0,0)) 
-       
+    # def draw_background(self):
+    #     size = pygame.transform.scale(self.background, (600,500))
+    #     self.screen.blit(size, (0,0)) 
 
     def draw(self):
+        # self.draw_background()
         self.screen.fill(DOGOBLUE)
         # game loop draw
         self.all_sprites.draw(self.screen)
@@ -75,10 +75,12 @@ class Game:
     def main(self):
         # game loop - every game has a loop
         while self.playing:
-            self.draw_background()
+            # self.draw_background()
             self.events()
             self.update()
             self.draw()
+          
+            
             
 
     # def game_over(self):

@@ -11,7 +11,7 @@ class Spritesheet:
     def get_sprite(self, x, y, width, height):
         sprite = pygame.Surface([width, height])
         sprite.blit(self.sheet, (0, 0), (x, y, width, height))
-        sprite.set_colorkey((DOGOBLUE))
+        sprite.set_colorkey(DOGOBLUE)
         return sprite
 
 
@@ -262,7 +262,7 @@ class Block(pygame.sprite.Sprite):
 
 
 class Ground(pygame.sprite.Sprite):
-    def __init__(self, game, x, y, image):
+    def __init__(self, game, x, y):
         self.game = game
         self._layer = GROUND_LAYER
         self.groups = self.game.all_sprites
@@ -273,7 +273,7 @@ class Ground(pygame.sprite.Sprite):
         self.width = TILESIZE
         self.height = TILESIZE
 
-        self.image = image
+        self.image = self.game.background
 
         self.rect = self.image.get_rect()
         self.rect.x = self.x
