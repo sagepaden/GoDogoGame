@@ -11,7 +11,7 @@ class Spritesheet:
     def get_sprite(self, x, y, width, height):
         sprite = pygame.Surface([width, height])
         sprite.blit(self.sheet, (0, 0), (x, y, width, height))
-        sprite.set_colorkey(0)
+        sprite.set_colorkey(BLACK)
         return sprite
 
 
@@ -24,8 +24,8 @@ class Player(pygame.sprite.Sprite):
 
         self.x = x * TILESIZE
         self.y = y * TILESIZE
-        self.width = SPRITETILE
-        self.height = SPRITETILE
+        self.width = CHARACTER_TILESIZE
+        self.height = CHARACTER_TILESIZE
 
         self.x_change = 0
         self.y_change = 0
@@ -33,7 +33,7 @@ class Player(pygame.sprite.Sprite):
         self.facing = "down"
         self.animation_loop = 1
 
-        self.image = self.game.dog_spritesheet.get_sprite(
+        self.image = self.game.character_spritesheet.get_sprite(
             64, 256, self.width, self.height
         )
 
@@ -41,9 +41,15 @@ class Player(pygame.sprite.Sprite):
         self.rect.x = self.x
         self.rect.y = self.y
 
+    # def handle_state_change(self):
+    #     keys = pygame.key.get_pressed()
+    #     if keys[pygame.K_DOWN]:
+    #         self.image = 
+
     def update(self):
         self.movement()
         self.animate()
+        self.collide_enemy()
 
         self.rect.x += self.x_change
         self.collide_blocks("x")
@@ -77,14 +83,20 @@ class Player(pygame.sprite.Sprite):
             self.facing = "down"
         if keys[pygame.K_z]:
             for sprite in self.game.all_sprites:
-                sprite.rect.y -= 0
+                    sprite.rect.y -= 0
             self.y_change += 0
             self.facing = "sit"
         if keys[pygame.K_x]:
             for sprite in self.game.all_sprites:
-                sprite.rect.y -= 0
+                    sprite.rect.y -= 0
             self.y_change += 0
             self.facing = "lay"
+
+    def collide_enemy(self):
+        hits = pygame.sprite.spritecollide(self, self.game.enemies, False)
+        if hits:
+            self.kill()
+            self.game.playing = False
 
     def collide_blocks(self, direction):
         if direction == "x":
@@ -105,50 +117,74 @@ class Player(pygame.sprite.Sprite):
 
     def animate(self):
         up_animations = [
-            self.game.dog_spritesheet.get_sprite(0, 0, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(65, 0, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(128, 0, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(192, 0, self.width, self.height),
+            self.game.character_spritesheet.get_sprite(0, 0, self.width, self.height),
+            self.game.character_spritesheet.get_sprite(65, 0, self.width, self.height),
+            self.game.character_spritesheet.get_sprite(128, 0, self.width, self.height),
+            self.game.character_spritesheet.get_sprite(192, 0, self.width, self.height),
         ]
 
         left_animations = [
-            self.game.dog_spritesheet.get_sprite(0, 65, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(65, 65, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(128, 65, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(192, 65, self.width, self.height),
+            self.game.character_spritesheet.get_sprite(0, 65, self.width, self.height),
+            self.game.character_spritesheet.get_sprite(65, 65, self.width, self.height),
+            self.game.character_spritesheet.get_sprite(
+                128, 65, self.width, self.height
+            ),
+            self.game.character_spritesheet.get_sprite(
+                192, 65, self.width, self.height
+            ),
         ]
 
         right_animations = [
-            self.game.dog_spritesheet.get_sprite(0, 128, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(65, 128, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(128, 128, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(192, 128, self.width, self.height),
+            self.game.character_spritesheet.get_sprite(0, 128, self.width, self.height),
+            self.game.character_spritesheet.get_sprite(
+                65, 128, self.width, self.height
+            ),
+            self.game.character_spritesheet.get_sprite(
+                128, 128, self.width, self.height
+            ),
+            self.game.character_spritesheet.get_sprite(
+                192, 128, self.width, self.height
+            ),
         ]
 
         down_animations = [
-            self.game.dog_spritesheet.get_sprite(0, 192, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(65, 192, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(128, 192, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(192, 192, self.width, self.height),
+            self.game.character_spritesheet.get_sprite(0, 192, self.width, self.height),
+            self.game.character_spritesheet.get_sprite(
+                65, 192, self.width, self.height
+            ),
+            self.game.character_spritesheet.get_sprite(
+                128, 192, self.width, self.height
+            ),
+            self.game.character_spritesheet.get_sprite(
+                192, 192, self.width, self.height
+            ),
         ]
 
         sit_animations = [
             self.game.dog_spritesheet.get_sprite(0, 256, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(65, 256, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(128, 256, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(192, 256, self.width, self.height),
+            self.game.dog_spritesheet.get_sprite(
+                65, 256, self.width, self.height
+            ),
+            self.game.dog_spritesheet.get_sprite(
+                128, 256, self.width, self.height
+            ),
+            self.game.dog_spritesheet.get_sprite(
+                192, 256, self.width, self.height
+            ),
         ]
-
+        
         lay_animations = [
             self.game.dog_spritesheet.get_sprite(0, 320, self.width, self.height),
             self.game.dog_spritesheet.get_sprite(65, 320, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(128, 320, self.width, self.height),
-            self.game.dog_spritesheet.get_sprite(192, 320, self.width, self.height),
+            self.game.dog_spritesheet.get_sprite(
+                128, 320, self.width, self.height),
+            self.game.dog_spritesheet.get_sprite(
+                192, 320, self.width, self.height),
         ]
 
         if self.facing == "down":
             if self.y_change == 0:
-                self.image = self.game.dog_spritesheet.get_sprite(
+                self.image = self.game.character_spritesheet.get_sprite(
                     0, 192, self.width, self.height
                 )
             else:
@@ -159,7 +195,7 @@ class Player(pygame.sprite.Sprite):
 
         if self.facing == "up":
             if self.y_change == 0:
-                self.image = self.game.dog_spritesheet.get_sprite(
+                self.image = self.game.character_spritesheet.get_sprite(
                     0, 0, self.width, self.height
                 )
             else:
@@ -170,7 +206,7 @@ class Player(pygame.sprite.Sprite):
 
         if self.facing == "left":
             if self.x_change == 0:
-                self.image = self.game.dog_spritesheet.get_sprite(
+                self.image = self.game.character_spritesheet.get_sprite(
                     0, 65, self.width, self.height
                 )
             else:
@@ -181,7 +217,7 @@ class Player(pygame.sprite.Sprite):
 
         if self.facing == "right":
             if self.x_change == 0:
-                self.image = self.game.dog_spritesheet.get_sprite(
+                self.image = self.game.character_spritesheet.get_sprite(
                     0, 128, self.width, self.height
                 )
             else:
@@ -190,34 +226,101 @@ class Player(pygame.sprite.Sprite):
                 if self.animation_loop >= 3:
                     self.animation_loop = 1
 
-        if self.facing == "sit":
-            if self.y_change == 0:
-                self.image = self.game.dog_spritesheet.get_sprite(
-                    65, 256, self.width, self.height
-                )
-            else:
-                self.image = sit_animations[math.floor(self.animation_loop)]
-                self.animation_loop += 0
-                if self.animation_loop >= 0:
-                    self.animation_loop = 0
 
-        if self.facing == "lay":
-            if self.y_change == 0:
-                self.image = self.game.dog_spritesheet.get_sprite(
-                    128, 320, self.width, self.height
+class Enemy(pygame.sprite.Sprite):
+    def __init__(self, game, x, y):
+        self.game = game
+        self._layer = ENEMY_LAYER
+        self.groups = self.game.all_sprites, self.game.enemies
+        pygame.sprite.Sprite.__init__(self, self.groups)
+
+        self.x = x * TILESIZE
+        self.y = y * TILESIZE
+        self.width = TILESIZE
+        self.height = TILESIZE
+
+        self.x_change = 0
+        self.y_change = 0
+
+        self.facing = random.choice(["left", "right"])
+        self.animation_loop = 1
+        self.movement_loop = 0
+        self.max_travel = random.randint(7, 30)
+
+        self.image = self.game.enemy_spritesheet.get_sprite(
+            3, 2, self.width, self.height
+        )
+
+        self.image.set_colorkey(BLACK)
+
+        self.rect = self.image.get_rect()
+        self.rect.x = self.x
+        self.rect.y = self.y
+
+    def update(self):
+        self.movement()
+        self.animate()
+
+        self.rect.x += self.x_change
+        self.rect.y += self.y_change
+
+        self.x_change = 0
+        self.y_change = 0
+
+    def movement(self):
+        if self.facing == "left":
+            self.x_change -= ENEMY_SPEED
+            self.movement_loop -= 1
+            if self.movement_loop <= -self.max_travel:
+                self.facing = "right"
+
+        if self.facing == "right":
+            self.x_change += ENEMY_SPEED
+            self.movement_loop += 1
+            if self.movement_loop >= self.max_travel:
+                self.facing = "left"
+
+    def animate(self):
+        left_animations = [
+            self.game.enemy_spritesheet.get_sprite(3, 98, self.width, self.height),
+            self.game.enemy_spritesheet.get_sprite(35, 98, self.width, self.height),
+            self.game.enemy_spritesheet.get_sprite(68, 98, self.width, self.height),
+        ]
+
+        right_animations = [
+            self.game.enemy_spritesheet.get_sprite(3, 66, self.width, self.height),
+            self.game.enemy_spritesheet.get_sprite(35, 66, self.width, self.height),
+            self.game.enemy_spritesheet.get_sprite(68, 66, self.width, self.height),
+        ]
+
+        if self.facing == "left":
+            if self.x_change == 0:
+                self.image = self.game.enemy_spritesheet.get_sprite(
+                    3, 98, self.width, self.height
                 )
             else:
-                self.image = lay_animations[math.floor(self.animation_loop)]
-                self.animation_loop += 0
-                if self.animation_loop >= 0:
-                    self.animation_loop = 0
+                self.image = left_animations[math.floor(self.animation_loop)]
+                self.animation_loop += 0.1
+                if self.animation_loop >= 3:
+                    self.animation_loop = 1
+
+        if self.facing == "right":
+            if self.x_change == 0:
+                self.image = self.game.enemy_spritesheet.get_sprite(
+                    3, 66, self.width, self.height
+                )
+            else:
+                self.image = right_animations[math.floor(self.animation_loop)]
+                self.animation_loop += 0.1
+                if self.animation_loop >= 3:
+                    self.animation_loop = 1
 
 
 class Block(pygame.sprite.Sprite):
     def __init__(self, game, x, y):
         self.game = game
         self._layer = BLOCK_LAYER
-        self.groups = self.game.all_sprites
+        self.groups = self.game.all_sprites, self.game.blocks
         pygame.sprite.Sprite.__init__(self, self.groups)
 
         self.x = x * TILESIZE
@@ -225,25 +328,9 @@ class Block(pygame.sprite.Sprite):
         self.width = TILESIZE
         self.height = TILESIZE
 
-        self.image = self.game.invisible
-
-        self.rect = self.image.get_rect()
-        self.rect.x = self.x
-        self.rect.y = self.y
-
-class DummyBlock(pygame.sprite.Sprite):
-    def __init__(self, game, x, y):
-        self.game = game
-        self._layer = BLOCK_LAYER
-        self.groups = self.game.all_sprites
-        pygame.sprite.Sprite.__init__(self, self.groups)
-
-        self.x = x * TILESIZE
-        self.y = y * TILESIZE
-        self.width = TILESIZE
-        self.height = TILESIZE
-
-        self.image = self.game.invisible
+        self.image = self.game.terrain_spritesheet.get_sprite(
+            960, 448, self.width, self.height
+        )
 
         self.rect = self.image.get_rect()
         self.rect.x = self.x
@@ -257,12 +344,14 @@ class Ground(pygame.sprite.Sprite):
         self.groups = self.game.all_sprites
         pygame.sprite.Sprite.__init__(self, self.groups)
 
-        self.x = x * MAP_W_TILESIZE
-        self.y = y * MAP_H_TILESIZE
-        self.width = MAP_W_TILESIZE
-        self.height = MAP_H_TILESIZE
+        self.x = x * TILESIZE
+        self.y = y * TILESIZE
+        self.width = TILESIZE
+        self.height = TILESIZE
 
-        self.image = self.game.background
+        self.image = self.game.terrain_spritesheet.get_sprite(
+            64, 352, self.width, self.height
+        )
 
         self.rect = self.image.get_rect()
         self.rect.x = self.x
