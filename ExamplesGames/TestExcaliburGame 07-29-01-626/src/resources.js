@@ -1,6 +1,7 @@
-import * as ex from 'excalibur';
+import * as ex from "excalibur";
 
 const Images = {
+<<<<<<< HEAD:ExamplesGames/TestExcaliburGame 07-29-01-626/src/resources.js
 	// Characters
 	linkSheetImage: new ex.ImageSource('../public/sprites/Root_Walk-sheet.png'),
 	// linkBlueSheetImage: new ex.ImageSource("/sprites/link-blue-sheet.png"),
@@ -9,19 +10,32 @@ const Images = {
 	// marinSheetImage: new ex.ImageSource("/sprites/marin-sheet.png"),
 	// tarinSheetImage: new ex.ImageSource("/sprites/tarin-sheet.png"),
 	// shopkeepSheetImage: new ex.ImageSource("/sprites/shopkeep-sheet.png"),
+=======
+  // Characters
+  linkSheetImage: new ex.ImageSource("../public/sprites/DogSprite.png"),
+//   sitSheetImage: new ex.ImageSource("../public/sprites/DogSittingSprites.png"),
+//   laySheetImage: new ex.ImageSource(
+//     "../public/sprites/DogsLayingDown-sheet.png",
+  // linkBlueSheetImage: new ex.ImageSource("/sprites/link-blue-sheet.png"),
+  // linkRedSheetImage: new ex.ImageSource("/sprites/link-red-sheet.png"),
+  // linkYellowSheetImage: new ex.ImageSource("/sprites/link-yellow-sheet.png"),
+  // marinSheetImage: new ex.ImageSource("/sprites/marin-sheet.png"),
+  // tarinSheetImage: new ex.ImageSource("/sprites/tarin-sheet.png"),
+  // shopkeepSheetImage: new ex.ImageSource("/sprites/shopkeep-sheet.png"),
+>>>>>>> 771d3ff914dad22c564fe55b736d683dffa201c2:ExamplesGames/TestExcaliburGame/src/resources.js
 
-	// Maps
-	// mobCaveImage: new ex.ImageSource("/maps/mob-cave.png"),
-	// outdoorImage: new ex.ImageSource("/maps/outdoor.png"),
-	indoorImage: new ex.ImageSource('/maps/interior-free.png'),
-	indoorColorsImage: new ex.ImageSource('../public/maps/mayberoom.png'),
+  // Maps
+  // mobCaveImage: new ex.ImageSource("/maps/mob-cave.png"),
+  // outdoorImage: new ex.ImageSource("/maps/outdoor.png"),
+  indoorImage: new ex.ImageSource("/maps/interior-free.png"),
+  indoorColorsImage: new ex.ImageSource("../public/maps/GoDogoTestMap-1.png"),
 
-	// Effects
-	// explosionSheetImage: new ex.ImageSource("/sprites/explosion-sheet.png"),
+  // Effects
+  // explosionSheetImage: new ex.ImageSource("/sprites/explosion-sheet.png"),
 
-	// Hud
-	//   hudImage: new ex.ImageSource("/hud/hud.png"),
-	//   heartSheetImage: new ex.ImageSource("/hud/heart-sheet.png"),
+  // Hud
+  //   hudImage: new ex.ImageSource("/hud/hud.png"),
+  //   heartSheetImage: new ex.ImageSource("/hud/heart-sheet.png"),
 };
 
 // const Sounds = {};
@@ -45,16 +59,16 @@ loader.suppressPlayButton = true;
 // Add all resources to the loader
 const allResources = { ...Images };
 for (const res in allResources) {
-	loader.addResource(allResources[res]);
+  loader.addResource(allResources[res]);
 }
 
 // Define an async function to load resources and run subsequent code
 async function loadResourcesAndRun() {
-	// Wait for resources to load
-	await loader.load();
+  // Wait for resources to load
+  await loader.load();
 
-	// Any code you want to run after resources are loaded goes here
-	console.log('All resources are loaded!');
+  // Any code you want to run after resources are loaded goes here
+  console.log("All resources are loaded!");
 }
 
 // Call the function
