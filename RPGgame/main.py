@@ -10,13 +10,11 @@ class Game:
         self.screen = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
         self.clock = pygame.time.Clock()
         self.running = True
-        self.font = pygame.font.Font('Marlboro.ttf', 32)
+        self.font = pygame.font.Font("Marlboro.ttf", 32)
 
-        self.character_spritesheet = Spritesheet('img/DogSprite.png')
-        self.terrain_spritesheet = Spritesheet('img/terrain.png')
-        self.enemy_spritesheet = Spritesheet('img/enemy.png')
-        self.intro_background = pygame.image.load('./img/introbackground.png')
-        self.go_background = pygame.image.load('./img/gameover.png')
+        self.dog_spritesheet = Spritesheet("img/DogSprite.png")
+        self.background = pygame.image.load("img/background.png")
+        self.intro_background = pygame.image.load("img/introbackground.png")
 
     def createTilemap(self):
         for i, row in enumerate(tilemap):
@@ -66,10 +64,12 @@ class Game:
             self.draw()
 
     def game_over(self):
-        text = self.font.render('Game Over', True, WHITE)
-        text_rect = text.get_rect(center=(WIN_WIDTH/2, WIN_HEIGHT/2))
+        text = self.font.render("Game Over", True, WHITE)
+        text_rect = text.get_rect(center=(WIN_WIDTH / 2, WIN_HEIGHT / 2))
 
-        restart_button = Button(10, WIN_HEIGHT - 60, 120, 50, WHITE, BLACK, 'Restart', 32)
+        restart_button = Button(
+            10, WIN_HEIGHT - 60, 120, 50, WHITE, BLACK, "Restart", 32
+        )
 
         for sprite in self.all_sprites:
             sprite.kill()
@@ -86,19 +86,19 @@ class Game:
                 self.new()
                 self.main()
 
-            self.screen.blit(self.go_background, (0,0))
+            self.screen.blit(self.go_background, (0, 0))
             self.screen.blit(text, text_rect)
             self.screen.blit(restart_button.image, restart_button.rect)
             self.clock.tick(FPS)
             pygame.display.update()
 
     def intro_screen(self):
-        intro = True 
+        intro = True
 
-        title = self.font.render('Save Yourself from Certain Death', True, BLACK)
+        title = self.font.render("Save Yourself from Certain Death", True, BLACK)
         title_rect = title.get_rect(x=140, y=240)
 
-        play_button = Button(280, 140, 100, 50, WHITE, BLACK, 'Play', 32)
+        play_button = Button(280, 140, 100, 50, WHITE, BLACK, "Play", 32)
 
         while intro:
             for event in pygame.event.get():
@@ -112,7 +112,7 @@ class Game:
             if play_button.is_pressed(mouse_pos, mouse_pressed):
                 intro = False
 
-            self.screen.blit(self.intro_background, (0,0))
+            self.screen.blit(self.intro_background, (0, 0))
             self.screen.blit(title, title_rect)
             self.screen.blit(play_button.image, play_button.rect)
             self.clock.tick(FPS)

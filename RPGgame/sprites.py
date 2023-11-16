@@ -41,10 +41,10 @@ class Player(pygame.sprite.Sprite):
         self.rect.x = self.x
         self.rect.y = self.y
 
-    def handle_state_change(self):
-        keys = pygame.key.get_pressed()
-        if keys[pygame.K_DOWN]:
-            self.image = 
+    # def handle_state_change(self):
+    #     keys = pygame.key.get_pressed()
+    #     if keys[pygame.K_DOWN]:
+    #         self.image = 
 
     def update(self):
         self.movement()
@@ -81,6 +81,16 @@ class Player(pygame.sprite.Sprite):
                 sprite.rect.y -= PLAYER_SPEED
             self.y_change += PLAYER_SPEED
             self.facing = "down"
+        if keys[pygame.K_z]:
+            for sprite in self.game.all_sprites:
+                    sprite.rect.y -= 0
+            self.y_change += 0
+            self.facing = "sit"
+        if keys[pygame.K_x]:
+            for sprite in self.game.all_sprites:
+                    sprite.rect.y -= 0
+            self.y_change += 0
+            self.facing = "lay"
 
     def collide_enemy(self):
         hits = pygame.sprite.spritecollide(self, self.game.enemies, False)
@@ -148,6 +158,28 @@ class Player(pygame.sprite.Sprite):
             self.game.character_spritesheet.get_sprite(
                 192, 192, self.width, self.height
             ),
+        ]
+
+        sit_animations = [
+            self.game.dog_spritesheet.get_sprite(0, 256, self.width, self.height),
+            self.game.dog_spritesheet.get_sprite(
+                65, 256, self.width, self.height
+            ),
+            self.game.dog_spritesheet.get_sprite(
+                128, 256, self.width, self.height
+            ),
+            self.game.dog_spritesheet.get_sprite(
+                192, 256, self.width, self.height
+            ),
+        ]
+        
+        lay_animations = [
+            self.game.dog_spritesheet.get_sprite(0, 320, self.width, self.height),
+            self.game.dog_spritesheet.get_sprite(65, 320, self.width, self.height),
+            self.game.dog_spritesheet.get_sprite(
+                128, 320, self.width, self.height),
+            self.game.dog_spritesheet.get_sprite(
+                192, 320, self.width, self.height),
         ]
 
         if self.facing == "down":
