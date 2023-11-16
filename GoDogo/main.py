@@ -13,7 +13,7 @@ class Game:
         self.font = pygame.font.Font('GoDogo/Marlboro.ttf', 32)
 
         self.dog_spritesheet = Spritesheet('GoDogo/img/DogSprite.png')
-        self.background = pygame.image.load('GoDogo/img/background.png')
+        self.background = pygame.image.load('GoDogo/img/GreyMap.png')
         self.intro_background = pygame.image.load('GoDogo/img/introbackground.png')
         # self.go_background = pygame.image.load('GoDogo/img/gameover.png')
 
