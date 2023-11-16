@@ -15,7 +15,7 @@ class Game:
         self.dog_spritesheet = Spritesheet('GoDogo/img/DogSprite.png')
         self.background = pygame.image.load('GoDogo/img/background.png')
         self.intro_background = pygame.image.load('GoDogo/img/introbackground.png')
-        self.go_background = pygame.image.load('GoDogo/img/gameover.png')
+        # self.go_background = pygame.image.load('GoDogo/img/gameover.png')
 
     # def createTilemap(self):
     #     for i, row in enumerate(tilemap):
@@ -66,7 +66,7 @@ class Game:
        
 
     def draw(self):
-        self.screen.fill((DOGOBLUE))
+        self.screen.fill(DOGOBLUE)
         # game loop draw
         self.all_sprites.draw(self.screen)
         self.clock.tick(FPS)
