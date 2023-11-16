@@ -19,18 +19,22 @@ class Game:
         # self.go_background = pygame.image.load('img/gameover.png')
 
     def createMapTilemap(self):
-        for i, row in enumerate(maptilemap):
+        for i, row in enumerate(tilemap):
             for j, column in enumerate(row):
                 DummyBlock(self, j, i)
+                # if column == "M":
+                #     Ground(self, j, i)
                 if column == "B":
                     Block(self, j, i)
                 if column == "P":
                     Player(self, j, i)
 
-    # def createTilemap(self):
-    #     for i, row in enumerate(tilemap):
-    #         for j, column in enumerate(row):
-    #             # Ground(self, j, i)
+    def createTilemap(self):
+        for i, row in enumerate(maptilemap):
+            for j, column in enumerate(row):
+                if column == "M":
+                    Ground(self, j, i)
+
     #             if column == "B":
     #                 Block(self, j, i)
     #             if column == "P":
@@ -55,8 +59,8 @@ class Game:
         self.all_sprites = pygame.sprite.LayeredUpdates()
         self.blocks = pygame.sprite.LayeredUpdates()
 
+        self.createTilemap()
         self.createMapTilemap()
-        # self.createTilemap()
 
     def events(self):
         # game loop events
