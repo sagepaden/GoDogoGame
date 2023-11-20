@@ -231,7 +231,8 @@ class Block(pygame.sprite.Sprite):
         self.rect.x = self.x
         self.rect.y = self.y
 
-class DummyBlock(pygame.sprite.Sprite):
+
+class Ground(pygame.sprite.Sprite):
     def __init__(self, game, x, y):
         self.game = game
         self._layer = BLOCK_LAYER
@@ -242,25 +243,6 @@ class DummyBlock(pygame.sprite.Sprite):
         self.y = y * TILESIZE
         self.width = TILESIZE
         self.height = TILESIZE
-
-        self.image = self.game.invisible
-
-        self.rect = self.image.get_rect()
-        self.rect.x = self.x
-        self.rect.y = self.y
-
-
-class Ground(pygame.sprite.Sprite):
-    def __init__(self, game, x, y):
-        self.game = game
-        self._layer = GROUND_LAYER
-        self.groups = self.game.all_sprites
-        pygame.sprite.Sprite.__init__(self, self.groups)
-
-        self.x = x * MAP_W_TILESIZE
-        self.y = y * MAP_H_TILESIZE
-        self.width = MAP_W_TILESIZE
-        self.height = MAP_H_TILESIZE
 
         self.image = self.game.background
 

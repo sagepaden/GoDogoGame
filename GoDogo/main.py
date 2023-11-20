@@ -12,6 +12,7 @@ class Game:
         self.running = True
         self.font = pygame.font.Font("Marlboro.ttf", 32)
 
+<<<<<<< HEAD
         self.dog_spritesheet = Spritesheet("img/DogSprite.png")
         self.background = pygame.image.load("img/background.png")
         self.intro_background = pygame.image.load("img/introbackground.png")
@@ -44,6 +45,34 @@ class Game:
     #     # Assuming "G" represents the ground area
     #     ground_image = self.background  # Use the entire background image for ground
     #     Ground(self, 0, 0, ground_image)
+=======
+        self.dog_spritesheet = Spritesheet('GoDogo/img/DogSprite.png')
+        self.background = pygame.image.load('GoDogo/img/GreyMap.png')
+        self.intro_background = pygame.image.load('GoDogo/img/introbackground.png')
+        # self.go_background = pygame.image.load('GoDogo/img/gameover.png')
+
+    def createTilemap(self):
+        for i, row in enumerate(tilemap):
+            for j, column in enumerate(row):
+                Ground(self, j, i)
+                if column == "B":
+                    Block(self, j, i)
+                if column == "P":
+                    Player(self, j, i)
+
+    # def createTilemap(self):
+    # # Assuming "G" represents the ground area
+    #     ground_image = self.background  # Use the entire background image for ground
+    #     Ground(self, 0, 0, ground_image)
+
+    #     for i, row in enumerate(tilemap):
+    #         for j, column in enumerate(row):
+    #             if column == "B":
+    #                 Block(self, j, i)
+    #             elif column == "P":
+    #                 Player(self, j, i)
+
+>>>>>>> eva
 
     #     for i, row in enumerate(maptilemap):
     #         for j, column in enumerate(row):
@@ -74,10 +103,16 @@ class Game:
         self.all_sprites.update()
 
     # def draw_background(self):
+<<<<<<< HEAD
     #     size = pygame.transform.scale(self.background, (600, 500))
     #     self.screen.blit(size, (0, 0))
+=======
+    #     size = pygame.transform.scale(self.background, (600,500))
+    #     self.screen.blit(size, (0,0)) 
+>>>>>>> eva
 
     def draw(self):
+        # self.draw_background()
         self.screen.fill(DOGOBLUE)
         # game loop draw
         self.all_sprites.draw(self.screen)
@@ -91,6 +126,12 @@ class Game:
             self.events()
             self.update()
             self.draw()
+<<<<<<< HEAD
+=======
+          
+            
+            
+>>>>>>> eva
 
     # def game_over(self):
     #     text = self.font.render('Game Over', True, WHITE)
