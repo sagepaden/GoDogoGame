@@ -4,8 +4,7 @@ TILESIZE = 64
 FPS = 60
 SPRITETILE = 64
 
-PLAYER_LAYER = 4
-ENEMY_LAYER = 3
+PLAYER_LAYER = 3
 BLOCK_LAYER = 2
 GROUND_LAYER = 1
 
@@ -18,13 +17,12 @@ WHITE = (255, 255, 255)
 DOGOBLUE = (35, 64, 88)
 
 tilemap = [
-    'BBBBBBBBBBBBBBBB',
-    'B..............B',
-    'B......G.......B',
-    'B..............B',
-    'B.....P........B',
-    'B..............B',
-    'BBBBBBBBBBBBBBBB',
+    'BBBBBBBB',
+    'B.G....B',
+    'B......B',
+    'BP.....B',
+    'B......B',
+    'BBBBBBBB',
 
 ]
 
