@@ -19,8 +19,7 @@ DOGOBLUE = (35, 64, 88)
 tilemap = [
     'BBBBBBBB',
     'B.G....B',
-    'B......B',
-    'BP.....B',
+    'B..P...B',
     'B......B',
     'BBBBBBBB',
 
