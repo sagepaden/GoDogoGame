@@ -23,7 +23,7 @@ It uses the `Simple DirectMedia Layer library`* and several other
 popular libraries to abstract the most common functions, making writing
 these programs a more intuitive task.
 
-## Installation
+## Setup/Installation
 
 Before installing pygame, you must check that Python is installed
 on your machine. To find out, open a command prompt (if you have
@@ -51,6 +51,13 @@ it, enter this command:
 ::
 
 pip install pygame
+
+- Clone this repository to your local machine.
+  ```bash
+  $ git clone https://github.com/sagepaden/GoDogoGame.git
+  ```
+- Open VS Code (or your IDE of choice).
+- Open the top level directory you just cloned.
 
 ## Help
 
