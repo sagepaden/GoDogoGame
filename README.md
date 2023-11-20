@@ -125,52 +125,24 @@ Special thanks to those who provided tutorials and documentation about pygame.
 Credit to ShawCode for his RPG tutorial series:
 <https://youtube.com/playlist?list=PLkkm3wcQHjT7gn81Wn-e78cAyhwBW3FIc&si=q_Y8IjFF6yWX3tO_>
 
-## Dependencies
-
-Pygame is obviously strongly dependent on SDL and Python. It also
-links to and embeds several other smaller libraries. The font
-module relies on SDL_ttf, which is dependent on freetype. The mixer
-(and mixer.music) modules depend on SDL_mixer. The image module
-depends on SDL_image, which also can use libjpeg and libpng. The
-transform module has an embedded version of SDL_rotozoom for its
-own rotozoom function. The surfarray module requires the Python
-NumPy package for its multidimensional numeric arrays.
-Dependency versions:
-
-+----------+------------------------+
-| CPython | >= 3.6 (Or use PyPy3) |
-+----------+------------------------+
-| SDL | >= 2.0.8 |
-+----------+------------------------+
-| SDL_mixer| >= 2.0.0 |
-+----------+------------------------+
-| SDL_image| >= 2.0.2 |
-+----------+------------------------+
-| SDL_ttf | >= 2.0.11 |
-+----------+------------------------+
-| SDL_gfx | (Optional, vendored in)|
-+----------+------------------------+
-| NumPy | >= 1.6.2 (Optional) |
-+----------+------------------------+
-
 ## License
 
-This library is distributed under `GNU LGPL version 2.1`\_, which can
-be found in the file `docs/LGPL.txt`. We reserve the right to place
-future versions of this library under a different license.
+MIT License
 
-This basically means you can use pygame in any project you want,
-but if you make any changes or additions to pygame itself, those
-must be released with a compatible license (preferably submitted
-back to the pygame project). Closed source and commercial games are fine.
+Copyright (c) Sage Paden, Jase Grable, Eva Kemp, Alesandria Wild
 
-The programs in the `examples` subdirectory are in the public domain.
+<details>
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 See docs/licenses for licenses of dependencies.
 
-.. \_pygame: https://www.pygame.org
-.. \_Simple DirectMedia Layer library: https://www.libsdl.org
-.. \_We need your help: https://www.pygame.org/contribute.html
-.. \_Compilation wiki page: https://www.pygame.org/wiki/Compilation
-.. \_docs page: https://www.pygame.org/docs/
-.. \_GNU LGPL version 2.1: https://www.gnu.org/copyleft/lesser.html
+- .. \_pygame: https://www.pygame.org
+- .. \_Simple DirectMedia Layer library: https://www.libsdl.org
+- .. \_Compilation wiki page: https://www.pygame.org/wiki/Compilation
+- .. \_docs page: https://www.pygame.org/docs/
+- .. \_GNU LGPL version 2.1: https://www.gnu.org/copyleft/lesser.html
+</details>
