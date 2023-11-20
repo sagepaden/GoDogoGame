@@ -10,10 +10,12 @@
 - VS Code
 - Excalibur Js
 - JavaScript
+- Tiled
+- Itch.io
 
 ## **Description**
 
-A game that showcases the GoDogo product.
+A game created with Python, Pygame, and Tiled to show case different levels of the GoDogo game. This game is used as a way to show the users what it is like to use the GoDogo product for the dogs. This allows the user to better understand the tasks the dog has to do and educates them on the product use/set up. This game utilizes various Sprite Sheets that were either created or found on Itch.io.
 
 ## **Setup/Installation Requirements**
 
@@ -52,12 +54,22 @@ it, enter this command:
 
 pip install pygame
 
-- Clone this repository to your local machine.
-  ```bash
+* _Chrome web browser for best compatibility_
+* _Have a prompt and editor to apply changes, like VSCode and GitBash_
+ [Download here for VScode](https://code.visualstudio.com/download)
+[Download here for GitBash](https://git-scm.com/downloads)
+
+## Step-by-step breakdown of how to download and run this program on your computer
+* _Clone this repo by opening GitBash, and navigating to the location you wish to clone the repo to._
+* _Navigate to the root directory of the project in the command line and run the following command_
+```
   $ git clone https://github.com/sagepaden/GoDogoGame.git
   ```
-- Open VS Code (or your IDE of choice).
-- Open the top level directory you just cloned.
+* _Now, open your file in a text editor by typing in the command_
+```
+$ code .
+```
+
 
 ## Help
 
@@ -103,20 +115,6 @@ detection to sprite management, pygame has everything you need to create
 exciting and engaging games. Whether you're building a platformer, puzzle
 game, or anything in between, pygame has you covered.
 
-## Building From Source
-
-If you want to use features that are currently in development,
-or you want to contribute to pygame, you will need to build pygame
-locally from its source code, rather than pip installing it.
-
-Installing from source is fairly automated. The most work will
-involve compiling and installing all the pygame dependencies. Once
-that is done, run the `setup.py` script which will attempt to
-auto-configure, build, and install pygame.
-
-Much more information about installing and compiling is available
-on the `Compilation wiki page`\_.
-
 ## Credits
 
 Thanks to everyone who has helped contribute to this game.
@@ -124,6 +122,15 @@ Special thanks to those who provided tutorials and documentation about pygame.
 
 Credit to ShawCode for his RPG tutorial series:
 <https://youtube.com/playlist?list=PLkkm3wcQHjT7gn81Wn-e78cAyhwBW3FIc&si=q_Y8IjFF6yWX3tO_>
+
+Credit to GameFromScratch.com for their Tiled tutorial series:
+<https://gamefromscratch.com/tiled-map-editor-tutorial-series/>
+
+Credit to LimeZu for creating a sprite sheet package called _Modern interiors_
+<https://limezu.itch.io/moderninteriors>
+
+Credit to Admurin for creating a top down dog sprite sheet.
+<https://admurin.itch.io/top-down-mobs-dog>
 
 ## License
 
@@ -145,4 +152,6 @@ See docs/licenses for licenses of dependencies.
 - .. \_Compilation wiki page: https://www.pygame.org/wiki/Compilation
 - .. \_docs page: https://www.pygame.org/docs/
 - .. \_GNU LGPL version 2.1: https://www.gnu.org/copyleft/lesser.html
+- .. \_Tiled Download: https://thorbjorn.itch.io/tiled
+- .. \_Tiled Tutorial: https://gamefromscratch.com/tiled-map-editor-tutorial-series/
 </details>
