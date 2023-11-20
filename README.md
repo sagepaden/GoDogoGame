@@ -54,22 +54,25 @@ it, enter this command:
 
 pip install pygame
 
-* _Chrome web browser for best compatibility_
-* _Have a prompt and editor to apply changes, like VSCode and GitBash_
- [Download here for VScode](https://code.visualstudio.com/download)
-[Download here for GitBash](https://git-scm.com/downloads)
+- _Chrome web browser for best compatibility_
+- _Have a prompt and editor to apply changes, like VSCode and GitBash_
+  [Download here for VScode](https://code.visualstudio.com/download)
+  [Download here for GitBash](https://git-scm.com/downloads)
 
 ## Step-by-step breakdown of how to download and run this program on your computer
-* _Clone this repo by opening GitBash, and navigating to the location you wish to clone the repo to._
-* _Navigate to the root directory of the project in the command line and run the following command_
+
+- _Clone this repo by opening GitBash, and navigating to the location you wish to clone the repo to._
+- _Navigate to the root directory of the project in the command line and run the following command_
+
 ```
   $ git clone https://github.com/sagepaden/GoDogoGame.git
-  ```
-* _Now, open your file in a text editor by typing in the command_
+```
+
+- _Now, open your file in a text editor by typing in the command_
+
 ```
 $ code .
 ```
-
 
 ## Help
 
@@ -120,7 +123,7 @@ game, or anything in between, pygame has you covered.
 Thanks to everyone who has helped contribute to this game.
 Special thanks to those who provided tutorials and documentation about pygame.
 
-Credit to ShawCode for his RPG tutorial series:
+Credit to ShawCode for his RPG Pygame tutorial series:
 <https://youtube.com/playlist?list=PLkkm3wcQHjT7gn81Wn-e78cAyhwBW3FIc&si=q_Y8IjFF6yWX3tO_>
 
 Credit to GameFromScratch.com for their Tiled tutorial series:
@@ -131,6 +134,25 @@ Credit to LimeZu for creating a sprite sheet package called _Modern interiors_
 
 Credit to Admurin for creating a top down dog sprite sheet.
 <https://admurin.itch.io/top-down-mobs-dog>
+
+Credit to Shubibubi for creating a _Cozy Interior_ sprite sheet.
+<https://shubibubi.itch.io/cozy-interior>
+
+Credit to Drew Conley for the multitude of resources for Excalibur Js.
+
+<details>
+
+- <https://www.youtube.com/watch?v=kH9v4kMkg7U&ab_channel=DrewConley>
+- <https://www.youtube.com/watch?v=sNk9dkaOkJs&t=154s&ab_channel=DrewConley>
+- <https://www.youtube.com/watch?v=H3Fn33lYuE0&ab_channel=DrewConley>
+- <https://codepen.io/punkydrewster713/pen/WNrXPrb>
+
+</details>
+
+## Bugs:
+
+- This game is still a work in progress
+- This game was started with Excalibur Js (found in the TestExcaliburGame folder), however, was switched to Pygame (found in the GoDogo folder).
 
 ## License
 
@@ -154,4 +176,5 @@ See docs/licenses for licenses of dependencies.
 - .. \_GNU LGPL version 2.1: https://www.gnu.org/copyleft/lesser.html
 - .. \_Tiled Download: https://thorbjorn.itch.io/tiled
 - .. \_Tiled Tutorial: https://gamefromscratch.com/tiled-map-editor-tutorial-series/
+- .. \_Excalibur Js Download: https://excaliburjs.com/
 </details>
