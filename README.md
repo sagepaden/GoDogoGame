@@ -1,6 +1,6 @@
-# GoDogo Game
+# 🐶 GoDogo Game 🐕
 
-#### By Jase Grable, Eva Kemp, Sage Paden, Alesandria Wild
+#### By Sage Paden, Jase Grable, Eva Kemp, Alesandria Wild
 
 ## **Technologies Used**
 
@@ -113,7 +113,10 @@ on the `Compilation wiki page`\_.
 ## Credits
 
 Thanks to everyone who has helped contribute to this game.
-Special thanks are also in order.
+Special thanks to those who provided tutorials and documentation about pygame.
+
+Credit to ShawCode for his RPG tutorial series:
+<https://youtube.com/playlist?list=PLkkm3wcQHjT7gn81Wn-e78cAyhwBW3FIc&si=q_Y8IjFF6yWX3tO_>
 
 ## Dependencies
 
