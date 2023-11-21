@@ -11,7 +11,7 @@ class Spritesheet:
     def get_sprite(self, x, y, width, height):
         sprite = pygame.Surface([width, height])
         sprite.blit(self.sheet, (0, 0), (x, y, width, height))
-        sprite.set_colorkey(0)
+        sprite.set_colorkey(BLACK)
         return sprite
 
 
@@ -217,7 +217,7 @@ class Block(pygame.sprite.Sprite):
     def __init__(self, game, x, y):
         self.game = game
         self._layer = BLOCK_LAYER
-        self.groups = self.game.all_sprites
+        self.groups = self.game.all_sprites, self.game.blocks
         pygame.sprite.Sprite.__init__(self, self.groups)
 
         self.x = x * TILESIZE
@@ -225,7 +225,7 @@ class Block(pygame.sprite.Sprite):
         self.width = TILESIZE
         self.height = TILESIZE
 
-        self.image = self.game.invisible
+        self.image = self.game.background.get_sprite(960, 448, self.width, self.height)
 
         self.rect = self.image.get_rect()
         self.rect.x = self.x
@@ -235,7 +235,7 @@ class Block(pygame.sprite.Sprite):
 class Ground(pygame.sprite.Sprite):
     def __init__(self, game, x, y):
         self.game = game
-        self._layer = BLOCK_LAYER
+        self._layer = GROUND_LAYER
         self.groups = self.game.all_sprites
         pygame.sprite.Sprite.__init__(self, self.groups)
 
@@ -244,11 +244,43 @@ class Ground(pygame.sprite.Sprite):
         self.width = TILESIZE
         self.height = TILESIZE
 
-        self.image = self.game.background
+        self.image = self.game.background.get_sprite(0, 0, 450, 241)
 
         self.rect = self.image.get_rect()
         self.rect.x = self.x
         self.rect.y = self.y
+
+
+# class Ground(pygame.sprite.Sprite):
+#     def __init__(self, game, x, y, indices):
+#         self.game = game
+#         self._layer = GROUND_LAYER
+#         self.groups = self.game.all_sprites
+#         pygame.sprite.Sprite.__init__(self, self.groups)
+
+#         self.x = x * TILESIZE
+#         self.y = y * TILESIZE
+#         self.width = TILESIZE
+#         self.height = TILESIZE
+
+#         # Assuming indices is a list of index positions
+#         self.image = self.build_image(indices)
+
+#         self.rect = self.image.get_rect()
+#         self.rect.x = self.x
+#         self.rect.y = self.y
+
+#     def build_image(self, indices):
+#         # Assuming get_sprite method takes x, y coordinates and width, height
+#         # and returns a surface
+#         background_image = pygame.Surface((self.width * len(indices), self.height))
+#         background_rect = background_image.get_rect()
+
+#         for i, index in enumerate(indices):
+#             sprite = self.game.background.get_sprite(index, 0, self.width, self.height)
+#             background_image.blit(sprite, (i * self.width, 0))
+
+#         return background_image
 
 
 class Button:
