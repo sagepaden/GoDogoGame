@@ -9,4 +9,8 @@ game = Game()
 game.run_game_loop()
 
 pygame.quit()
+<<<<<<< HEAD
 quit()
+=======
+quit()
+>>>>>>> 95838f95239c06d0b7a1dc5072574de402d237f4

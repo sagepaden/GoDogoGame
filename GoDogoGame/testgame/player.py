@@ -15,4 +15,8 @@ class Player(GameObject):
     def move(self, direction, max_height):
         if (self.y >= max_height-self.height and direction > 0) or (self.y == 0 and direction < 0):
             return
+<<<<<<< HEAD
         self.y += (direction * self.speed)
+=======
+        self.y += (direction * self.speed)
+>>>>>>> 95838f95239c06d0b7a1dc5072574de402d237f4

@@ -11,7 +11,12 @@ class Game:
         self.white_colour = (255, 255, 255)
         self.game_window = pygame.display.set_mode((self.width, self.height))
         self.clock = pygame.time.Clock()
+<<<<<<< HEAD
         self.background = GameObject(0, 0, self.width, self.height, 'assets/background.png')
+=======
+        self.background = GameObject(
+            0, 0, self.width, self.height, 'assets/background.png')
+>>>>>>> 95838f95239c06d0b7a1dc5072574de402d237f4
         self.treasure = GameObject(470, 370, 32, 32, 'assets/treasure.png')
         self.treasure1 = GameObject(320, 370, 32, 32, 'assets/treasure.png')
         self.level = 1.0
@@ -51,4 +56,8 @@ class Game:
             # # Detect collisions
             # if self.check_if_collided():
             #     self.reset_map()
+<<<<<<< HEAD
             self.clock.tick(60)
+=======
+            self.clock.tick(60)
+>>>>>>> 95838f95239c06d0b7a1dc5072574de402d237f4
