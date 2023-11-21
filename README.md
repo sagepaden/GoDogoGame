@@ -7,11 +7,14 @@
 - Python
 - Pygame
 - Git
+- GitHub
+- GitBash
 - VS Code
 - Excalibur Js
 - JavaScript
 - Tiled
 - Itch.io
+- Node.js
 
 ## **Description**
 
@@ -27,12 +30,16 @@ these programs a more intuitive task.
 
 ## Setup/Installation
 
+### For Pygame:
+
 Before installing pygame, you must check that Python is installed
 on your machine. To find out, open a command prompt (if you have
 Windows) or a terminal (if you have MacOS or Linux) and type this:
-::
 
-python --version
+```
+  $ python --version
+```
+
 
 If a message such as "Python 3.8.10" appears, it means that Python
 is correctly installed. If an error message appears, it means that
@@ -43,35 +50,91 @@ Once Python is installed, you have to perform a final check: you have
 to see if pip is installed. Generally, pip is pre-installed with
 Python but we are never sure. Same as for Python, type the following
 command:
-::
 
-pip --version
+```
+$ pip --version
+```
 
 If a message such as "pip 20.0.2 from /usr/lib/python3/dist-packages/pip
 (python 3.8)" appears, you are ready to install pygame! To install
 it, enter this command:
-::
 
-pip install pygame
+```
+$ pip install pygame
+```
+### For Excalibur: 
+
+To install Excalibur on your computer, you must make sure tha you have Node.js installed. If you do not or are not sure see instructions below. Open your command line or GitBash and write: 
+
+```
+$ npm install excalibur
+```
+
+Excalibur does have other options for download/useage which can be found [here](https://excaliburjs.com/docs/installation/). Npm is how this application utilized Exaclibur.
+
+### Other applications that may be needed: 
 
 - _Chrome web browser for best compatibility_
 - _Have a prompt and editor to apply changes, like VSCode and GitBash_
   [Download here for VScode](https://code.visualstudio.com/download)
   [Download here for GitBash](https://git-scm.com/downloads)
+- _If you do not have node on your computer download node here_
+  [Download here for Node.js](https://nodejs.org/en/download)
+  * To check if you have Node on your computer open your command line or your GitBach and type
+  ```
+  $ node -v
+  ```
 
-## Step-by-step breakdown of how to download and run this program on your computer
+## Step-by-step breakdown of how to download and run this application on your computer
 
 - _Clone this repo by opening GitBash, and navigating to the location you wish to clone the repo to._
 - _Navigate to the root directory of the project in the command line and run the following command_
 
 ```
-  $ git clone https://github.com/sagepaden/GoDogoGame.git
+$ git clone https://github.com/sagepaden/GoDogoGame.git
 ```
 
 - _Now, open your file in a text editor by typing in the command_
 
 ```
 $ code .
+```
+
+### To launch the Pygame application:
+
+- Open main.py in the GoDogo folder, then run the following command in the terminal:
+
+```
+$ python main.py
+```
+
+- The program will automatically open and run the Pygame application on your computer.
+
+### To launch the Excalibur application:
+
+- With Node installed, run the following on the command-line:
+
+```
+npm install
+```
+
+- This will add excalibur and other necessary packages to your package.json as a project dependency and will create a folder structure like:
+
+```
+/node_modules
+/excalibur
+/build
+/dist
+excalibur.js
+excalibur.min.js
+excalibur.d.ts
+...other files
+```
+
+- After installation, run the following command in the terminal to open the application in the browser:
+
+```
+npm run dev
 ```
 
 ## Help
