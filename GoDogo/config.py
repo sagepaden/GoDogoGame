@@ -1,6 +1,6 @@
 WIN_WIDTH = 600
 WIN_HEIGHT = 400
-TILESIZE = 64
+TILESIZE = 24
 FPS = 60
 SPRITETILE = 64
 
@@ -17,11 +17,16 @@ WHITE = (255, 255, 255)
 DOGOBLUE = (35, 64, 88)
 
 tilemap = [
-    'BBBBBBBB',
-    'B.G....B',
-    'B..P...B',
-    'B......B',
-    'BBBBBBBB',
+    'BGBBBBBBBBBBBB',
+    'BBBBBBBBBBBBBB',
+    'BBBBBBBBBBBBBB',
+    'B....P.......B',
+    'B............B',
+    'B............B',
+    'B............B',
+    'B............B',
+    'B............B',
+    'BBBBBBBBBBBBBB',
 
 ]
 
