@@ -60,13 +60,14 @@ class Game:
         self.clock.tick(FPS)
         pygame.display.update()
 
+#function async added for pygbag web hosting
     async def main(self):
         # game loop - every game has a loop
         while self.playing:
             self.events()
             self.update()
             self.draw()
-            
+            #added line below for pygbag
             await asyncio.sleep(0)
 
 
@@ -128,6 +129,7 @@ g = Game()
 g.intro_screen()
 g.new()
 
+#async function now working right now
 asyncio.run(g.main())
 
 # while g.running:
