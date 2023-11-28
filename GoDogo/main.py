@@ -2,6 +2,7 @@ import pygame
 from sprites import *
 from config import *
 import sys
+import asyncio
 
 
 class Game:
@@ -10,21 +11,12 @@ class Game:
         self.screen = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
         self.clock = pygame.time.Clock()
         self.running = True
-        self.font = pygame.font.Font('GoDogo/Marlboro.ttf', 32)
+        self.font = pygame.font.Font('Marlboro.ttf', 32)
 
-        self.dog_spritesheet = Spritesheet('GoDogo/img/DogSprite.png')
-        self.background = Spritesheet('GoDogo/img/GreyMap.png')
-        self.intro_background = pygame.image.load('GoDogo/img/introbackground.png')
-        # self.go_background = pygame.image.load('GoDogo/img/gameover.png')
-
-    # def createTilemap(self):
-    #     for i, row in enumerate(tilemap):
-    #         for j, column in enumerate(row):
-    #             Ground(self, j, i)
-    #             if column == "B":
-    #                 Block(self, j, i)
-    #             if column == "P":
-    #                 Player(self, j, i)
+        self.dog_spritesheet = Spritesheet('img/DogSprite.png')
+        self.background = Spritesheet('img/GreyMap.png')
+        self.intro_background = pygame.image.load('img/introbackground.png')
+        # self.go_background = pygame.image.load('img/gameover.png')
 
     def createTilemap(self):
         for i, row in enumerate(tilemap):
@@ -68,14 +60,15 @@ class Game:
         self.clock.tick(FPS)
         pygame.display.update()
 
-    def main(self):
+    async def main(self):
         # game loop - every game has a loop
         while self.playing:
-            # self.draw_background()
             self.events()
             self.update()
             self.draw()
             
+            await asyncio.sleep(0)
+
 
     # def game_over(self):
     #     text = self.font.render('Game Over', True, WHITE)
@@ -134,8 +127,11 @@ class Game:
 g = Game()
 g.intro_screen()
 g.new()
-while g.running:
-    g.main()
 
-pygame.quit()
-sys.exit()
+asyncio.run(g.main())
+
+# while g.running:
+#     g.main()
+
+# pygame.quit()
+# sys.exit()

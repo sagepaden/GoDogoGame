@@ -313,7 +313,7 @@ class Ground(pygame.sprite.Sprite):
 
 class Button:
     def __init__(self, x, y, width, height, fg, bg, content, fontsize):
-        self.font = pygame.font.Font("GoDogo/Marlboro.ttf", fontsize)
+        self.font = pygame.font.Font("Marlboro.ttf", fontsize)
         self.content = content
 
         self.x = x
