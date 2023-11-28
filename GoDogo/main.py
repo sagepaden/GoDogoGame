@@ -129,7 +129,7 @@ g = Game()
 g.intro_screen()
 g.new()
 
-#async function now working right now
+#async function for pygbag hosting not working right now
 asyncio.run(g.main())
 
 # while g.running:
