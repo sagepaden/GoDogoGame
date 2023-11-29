@@ -51,7 +51,7 @@ class Game:
     # def draw_background(self):
     #     size = pygame.transform.scale(self.background, (600,500))
     #     self.screen.blit(size, (0,0)) 
-       
+    
 
     def draw(self):
         self.screen.fill(DOGOBLUE)
@@ -60,15 +60,7 @@ class Game:
         self.clock.tick(FPS)
         pygame.display.update()
 
-#function async added for pygbag web hosting
-    async def main(self):
-        # game loop - every game has a loop
-        while self.playing:
-            self.events()
-            self.update()
-            self.draw()
-            #added line below for pygbag
-            await asyncio.sleep(0)
+
 
 
     # def game_over(self):
@@ -98,39 +90,54 @@ class Game:
     #         self.clock.tick(FPS)
     #         pygame.display.update()
 
-    def intro_screen(self):
-        intro = True 
+    # def intro_screen(self):
+    #     intro = True 
 
-        title = self.font.render('Your Dog Loves you, So Love Your Dog.', True, BLACK)
-        title_rect = title.get_rect(x=140, y=240)
+    #     title = self.font.render('Your Dog Loves you, So Love Your Dog.', True, BLACK)
+    #     title_rect = title.get_rect(x=140, y=240)
 
-        play_button = Button(280, 140, 100, 50, WHITE, BLACK, 'Play', 32)
+    #     play_button = Button(280, 140, 100, 50, WHITE, BLACK, 'Play', 32)
 
-        while intro:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    intro = False
-                    self.running = False
+    #     while intro:
+    #         for event in pygame.event.get():
+    #             if event.type == pygame.QUIT:
+    #                 intro = False
+    #                 self.running = False
 
-            mouse_pos = pygame.mouse.get_pos()
-            mouse_pressed = pygame.mouse.get_pressed()
+    #         mouse_pos = pygame.mouse.get_pos()
+    #         mouse_pressed = pygame.mouse.get_pressed()
 
-            if play_button.is_pressed(mouse_pos, mouse_pressed):
-                intro = False
+    #         if play_button.is_pressed(mouse_pos, mouse_pressed):
+    #             intro = False
 
-            self.screen.blit(self.intro_background, (0,0))
-            self.screen.blit(title, title_rect)
-            self.screen.blit(play_button.image, play_button.rect)
-            self.clock.tick(FPS)
-            pygame.display.update()
+    #         self.screen.blit(self.intro_background, (0,0))
+    #         self.screen.blit(title, title_rect)
+    #         self.screen.blit(play_button.image, play_button.rect)
+    #         self.clock.tick(FPS)
+    #         pygame.display.update()
+
+        #function async added for pygbag web hosting
+    async def main(self):
+        self.new()
+        # self.intro_screen()
+        # game loop - every game has a loop
+        while self.playing:
+            self.events()
+            self.update()
+            self.draw()
+            
+            
+            #added line below for pygbag
+            await asyncio.sleep(0)
+
+
 
 
 g = Game()
-g.intro_screen()
-g.new()
+
+asyncio.run(g.main())
 
 #async function for pygbag hosting not working right now
-asyncio.run(g.main())
 
 # while g.running:
 #     g.main()
